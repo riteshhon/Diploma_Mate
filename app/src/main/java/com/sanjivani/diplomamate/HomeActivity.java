@@ -99,7 +99,7 @@ public class HomeActivity extends AppCompatActivity {
                         @Override
                         public void transformPage(@NonNull @NotNull View page, float position) {
                             float r = 1 - Math.abs(position);
-                            page.setScaleY(0.95f + r * 0.05f);
+                            page.setScaleY(0.95f + r * 0.02f);
                         }
                     });
                     //   Auto Sliding Images
@@ -122,7 +122,7 @@ public class HomeActivity extends AppCompatActivity {
                         public void onPageSelected(int position) {
                             super.onPageSelected(position);
                             homeSliderHandler.removeCallbacks(homeSliderRunnable);
-                            homeSliderHandler.postDelayed(homeSliderRunnable, 3000);
+                            homeSliderHandler.postDelayed(homeSliderRunnable, 4000);
                         }
                     });
 
