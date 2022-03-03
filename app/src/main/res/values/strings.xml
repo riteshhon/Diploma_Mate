@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Diploma Mate</string>
+    <string name="welcome">Welcome to Diploma Mate!</string>
+    <string name="developed_by">Developed By</string>
+    <string name="sanjivani_sdc">Sanjivani Developer Student Club</string>
+    <string name="sigin_text">Meet your diploma mate that will provide the
+resources through your diploma journey!</string>
+    <string name="signin_with_google">Sign in with google</string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="terms_condition"><u>Terms &amp; Condition.</u></string>
+
+</resources>
