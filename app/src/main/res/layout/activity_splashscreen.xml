@@ -42,6 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/developed_by"
+            android:textSize="12sp"
             android:textColor="#CDCDCD"/>
 
         <TextView
@@ -50,7 +51,7 @@
             android:text="@string/sanjivani_sdc"
             android:layout_marginBottom="50dp"
             android:layout_marginTop="6dp"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="#F1444F"/>
 
     </LinearLayout>
