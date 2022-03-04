@@ -1,6 +1,6 @@
 package com.sanjivani.diplomamate;
 
-import static com.sanjivani.diplomamate.KeyAdapter.API;
+import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +33,7 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.sanjivani.diplomamate.helper.KeyAdapter;
 
 import java.util.HashMap;
 import java.util.Map;

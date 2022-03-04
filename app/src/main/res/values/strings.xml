@@ -9,5 +9,7 @@ resources through your diploma journey!</string>
     <string name="signin_with_google">Sign in with Google</string>
     <string name="privacy_policy"><u>Privacy Policy</u></string>
     <string name="terms_condition"><u>Terms &amp; Condition.</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

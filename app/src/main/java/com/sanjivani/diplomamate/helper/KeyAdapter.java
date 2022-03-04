@@ -1,4 +1,4 @@
-package com.sanjivani.diplomamate;
+package com.sanjivani.diplomamate.helper;
 
 public interface KeyAdapter {
 
