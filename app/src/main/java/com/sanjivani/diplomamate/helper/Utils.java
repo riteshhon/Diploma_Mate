@@ -2,8 +2,13 @@ package com.sanjivani.diplomamate.helper;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.view.WindowManager;
+
+import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.core.content.ContextCompat;
 
 
@@ -35,6 +40,17 @@ public class Utils {
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
     }
 
+    public static void openCustomTab(Context activity, CustomTabsIntent customTabsIntent, Uri uri) {
+
+        String packageName = "com.android.chrome";
+        if (packageName != null) {
+            customTabsIntent.intent.setPackage(packageName);
+            customTabsIntent.launchUrl(activity, uri);
+        } else {
+            // redirecting our user to users device default browser.
+            activity.startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        }
+    }
 
 
 }

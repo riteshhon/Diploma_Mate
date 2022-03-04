@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout-v28/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_basic_details.xml" value="0.264" />
-        <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_home.xml" value="0.176" />
+        <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_fragment.xml" value="0.25" />
+        <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/activity_splashscreen.xml" value="0.264" />
+        <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/fragment_about_us.xml" value="0.25" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/fragment_me.xml" value="0.264" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/item_homeslider.xml" value="0.264" />
         <entry key="..\:/#DevelopersStudentClub/Diploma Mate/app/src/main/res/layout/item_new_homeslider.xml" value="0.264" />
       </map>

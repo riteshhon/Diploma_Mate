@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.sanjivani.diplomamate.home.HomeFragment;
+import com.sanjivani.diplomamate.home.MeFragment;
 
 public class HomeViewPagerAdapter extends FragmentStateAdapter {
 
@@ -20,9 +21,7 @@ public class HomeViewPagerAdapter extends FragmentStateAdapter {
 
         switch (position) {
             case 1:
-                return new HomeFragment();
-            case 2:
-                return new HomeFragment();
+                return new MeFragment();
             default:
                 return new HomeFragment();
         }
@@ -30,6 +29,6 @@ public class HomeViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 2;
     }
 }

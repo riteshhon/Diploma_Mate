@@ -70,7 +70,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="?attr/selectableItemBackground"
@@ -78,7 +78,7 @@
                         android:focusable="true"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="15dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -112,7 +112,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Syllabus"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 
@@ -124,12 +124,12 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginEnd="15dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
                         android:layout_marginStart="10dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -163,7 +163,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Manuals"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 
@@ -180,7 +180,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="?attr/selectableItemBackground"
@@ -188,7 +188,7 @@
                         android:focusable="true"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="15dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -222,7 +222,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Notes"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 
@@ -234,12 +234,12 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginEnd="15dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
                         android:layout_marginStart="10dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -273,7 +273,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Video Lectures"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 
@@ -290,7 +290,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:background="?attr/selectableItemBackground"
@@ -298,7 +298,7 @@
                         android:focusable="true"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="15dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -332,7 +332,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Question Paper"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 
@@ -344,12 +344,12 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginEnd="15dp"
-                        android:outlineSpotShadowColor="#717171"
+                        android:outlineSpotShadowColor="#CDCDCD"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
                         android:layout_marginStart="10dp"
-                        app:cardElevation="5dp"
+                        app:cardElevation="10dp"
                         android:backgroundTint="@color/bg_home_color"
                         app:cardCornerRadius="10dp"
                         android:layout_weight="1">
@@ -383,7 +383,7 @@
                                 android:layout_marginTop="15dp"
                                 android:text="Answer Paper"
                                 android:textStyle="bold"
-                                android:textColor="@color/primary_color"/>
+                                android:textColor="@color/secondary_color"/>
 
                         </LinearLayout>
 

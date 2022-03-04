@@ -1,6 +1,7 @@
 package com.sanjivani.diplomamate;
 
 import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
+import static com.sanjivani.diplomamate.helper.Utils.openCustomTab;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,18 +95,6 @@ public class SignInActivity extends AppCompatActivity {
             openCustomTab(this, customIntent.build(), Uri.parse(uriString));
         });
 
-    }
-
-    public static void openCustomTab(Context activity, CustomTabsIntent customTabsIntent, Uri uri) {
-
-        String packageName = "com.android.chrome";
-        if (packageName != null) {
-            customTabsIntent.intent.setPackage(packageName);
-            customTabsIntent.launchUrl(activity, uri);
-        } else {
-            // redirecting our user to users device default browser.
-            activity.startActivity(new Intent(Intent.ACTION_VIEW, uri));
-        }
     }
 
     private void signIn() {
