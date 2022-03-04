@@ -6,6 +6,7 @@
     <color name="primary_color">#063051</color>
     <color name="secondary_color">#F35B65</color>
     <color name="yellow_color">#FDA632</color>
+    <color name="bg_home_color">#FCFEFF</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>

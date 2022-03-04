@@ -127,7 +127,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="?attr/selectableItemBackground"
-            android:backgroundTint="@color/yellow_color"
+            android:backgroundTint="#4257CC"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="80dp">

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,7 +62,8 @@ public class HomeSliderAdapter extends RecyclerView.Adapter<HomeSliderAdapter.Vi
             }
         });
 
-        if (homeSliderModels.get(position).getHomeDescribe() != null){
+
+        if (!homeSliderModels.get(position).getHomeDescribe().equals("")){
             holder.tv_SliderDescribe.setVisibility(View.VISIBLE);
         } else {
             holder.tv_SliderDescribe.setVisibility(View.GONE);
