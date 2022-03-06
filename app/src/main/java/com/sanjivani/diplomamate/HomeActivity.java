@@ -7,11 +7,24 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.tabs.TabLayout;
 import com.sanjivani.diplomamate.adapter.HomeViewPagerAdapter;
 import com.sanjivani.diplomamate.databinding.ActivityHomeBinding;
+import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.helper.Utils;
+import com.sanjivani.diplomamate.model.HomeSliderModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -87,8 +100,8 @@ public class HomeActivity extends AppCompatActivity {
             });
         });
 
-
     }
+
 
 
     @Override

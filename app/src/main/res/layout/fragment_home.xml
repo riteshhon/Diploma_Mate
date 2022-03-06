@@ -25,7 +25,7 @@
             android:text="Home"
             android:textAlignment="textStart"
             android:textColor="#EAEAEA"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -68,6 +68,7 @@
                     android:weightSum="2">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSyllabus"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:outlineSpotShadowColor="#CDCDCD"
@@ -119,6 +120,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvManual"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:layout_marginTop="10dp"

@@ -3,6 +3,7 @@ package com.sanjivani.diplomamate.home;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.card.MaterialCardView;
+import com.sanjivani.diplomamate.account.FragmentActivity;
 import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.adapter.HomeSliderAdapter;
@@ -41,6 +44,8 @@ import java.util.Map;
 
 public class HomeFragment extends Fragment {
 
+    public static String typeOfResources = "";
+
     Context context;
 
     //    Home Slider
@@ -49,6 +54,8 @@ public class HomeFragment extends Fragment {
     Handler homeSliderHandler = new Handler();
     Runnable homeSliderRunnable;
     ViewPager2 viewPagerHomeSlider;
+
+    MaterialCardView cvSyllabus, cvManual;
 
     TextView line1;
 
@@ -65,14 +72,16 @@ public class HomeFragment extends Fragment {
         context = getContext();
 
         viewPagerHomeSlider = view.findViewById(R.id.viewPagerHomeSlider);
+        cvSyllabus = view.findViewById(R.id.cvSyllabus);
+        cvManual = view.findViewById(R.id.cvManual);
         line1 = view.findViewById(R.id.line1);
 
+        HomeOnClick();
 
         HomeSlider();
 
         return view;
     }
-
 
     private void HomeSlider() {
 
@@ -159,6 +168,22 @@ public class HomeFragment extends Fragment {
         };
         RequestQueue requestQueue1 = Volley.newRequestQueue(context);
         requestQueue1.add(request);
+    }
+
+
+    private void HomeOnClick() {
+
+        cvSyllabus.setOnClickListener(view -> {
+            FragmentActivity.fragment = "Subject";
+            typeOfResources = "Syllabus";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+        cvManual.setOnClickListener(view -> {
+            FragmentActivity.fragment = "Subject";
+            typeOfResources = "Manual";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+
     }
 
 }

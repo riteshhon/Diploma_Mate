@@ -25,7 +25,7 @@
             android:text="Basic Details"
             android:textAlignment="textStart"
             android:textColor="#EAEAEA"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
