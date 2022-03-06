@@ -38,7 +38,7 @@ public class MeFragment extends Fragment {
     TextView tvUserName, tvUserEmailId;
 
     CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
-    MaterialCardView cvPrivacyPolicy, cvTermsCondition, cvAboutUs;
+    MaterialCardView cvPrivacyPolicy, cvTermsCondition, cvAboutUs, cvAboutClub;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +55,7 @@ public class MeFragment extends Fragment {
         tvUserName = view.findViewById(R.id.tvUserName);
         tvUserEmailId = view.findViewById(R.id.tvUserEmailId);
         cvAboutUs = view.findViewById(R.id.cvAboutUs);
+        cvAboutClub = view.findViewById(R.id.cvAboutClub);
 
         cvPrivacyPolicy = view.findViewById(R.id.cvPrivacyPolicy);
         cvTermsCondition = view.findViewById(R.id.cvTermsCondition);
@@ -84,6 +85,11 @@ public class MeFragment extends Fragment {
 
         cvAboutUs.setOnClickListener(view -> {
             FragmentActivity.fragment = "AboutUs";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+
+        cvAboutClub.setOnClickListener(view -> {
+            FragmentActivity.fragment = "AboutClub";
             startActivity(new Intent(context, FragmentActivity.class));
         });
 

@@ -19,6 +19,8 @@ public class FragmentActivity extends AppCompatActivity {
 
         if (fragment.equals("AboutUs")){
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new AboutUsFragment()).commit();
+        } else if (fragment.equals("AboutClub")) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new AboutClubFragment()).commit();
         }
 
 

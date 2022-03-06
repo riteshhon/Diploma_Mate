@@ -3,34 +3,29 @@ package com.sanjivani.diplomamate.account;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.KEY;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.sanjivani.diplomamate.R;
+import com.sanjivani.diplomamate.adapter.AboutClubAdapter;
 import com.sanjivani.diplomamate.adapter.AboutUsAdapter;
+import com.sanjivani.diplomamate.model.AboutClubModel;
 import com.sanjivani.diplomamate.model.AboutUsModel;
 
 import org.json.JSONArray;
@@ -42,9 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class AboutUsFragment extends Fragment {
+public class AboutClubFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,17 +49,16 @@ public class AboutUsFragment extends Fragment {
     CardView cvProgressBar;
 
     //    AboutUs
-    AboutUsAdapter aboutUsAdapter;
-    List<AboutUsModel> aboutUsModels = new ArrayList<>();
+    AboutClubAdapter aboutClubAdapter;
+    List<AboutClubModel> aboutClubModels = new ArrayList<>();
     RecyclerView recyclerView;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_about_club, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_about_us, container, false);
         context = getContext();
 
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -74,40 +66,39 @@ public class AboutUsFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
 
-        callDevelopmentTeam();
+        callClubMembers();
 
 
         return view;
     }
 
-    private void callDevelopmentTeam() {
+    private void callClubMembers() {
         cvProgressBar.setVisibility(View.VISIBLE);
 
-        StringRequest request = new StringRequest(Request.Method.POST, API+"aboutUs.php", response -> {
-            aboutUsModels.clear();
+        StringRequest request = new StringRequest(Request.Method.POST, API+"aboutClub.php", response -> {
+            aboutClubModels.clear();
             for (int i = 0; i < response.length(); i++) {
                 try {
-
                     JSONArray jsonArray = new JSONArray(response);
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    AboutUsModel aboutUsModel = new AboutUsModel();
-                    aboutUsModel.setId(jsonObject.getString("id"));
-                    aboutUsModel.setImageUrl(jsonObject.getString("imageUrl"));
-                    aboutUsModel.setName(jsonObject.getString("name"));
-                    aboutUsModel.setDescribeMember(jsonObject.getString("describeMember"));
-                    aboutUsModel.setLinkedInUrl(jsonObject.getString("linkedInUrl"));
-                    aboutUsModel.setTwitterUrl(jsonObject.getString("twitterUrl"));
-                    aboutUsModel.setGithubUrl(jsonObject.getString("githubUrl"));
-                    aboutUsModels.add(aboutUsModel);
+                    AboutClubModel aboutClubModel = new AboutClubModel();
+                    aboutClubModel.setId(jsonObject.getString("id"));
+                    aboutClubModel.setImageUrl(jsonObject.getString("imageUrl"));
+                    aboutClubModel.setName(jsonObject.getString("name"));
+                    aboutClubModel.setDescribeMember(jsonObject.getString("describeMember"));
+                    aboutClubModel.setLinkedInUrl(jsonObject.getString("linkedInUrl"));
+                    aboutClubModel.setTwitterUrl(jsonObject.getString("twitterUrl"));
+                    aboutClubModel.setGithubUrl(jsonObject.getString("githubUrl"));
+                    aboutClubModels.add(aboutClubModel);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
             cvProgressBar.setVisibility(View.GONE);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-            aboutUsAdapter = new AboutUsAdapter(context, aboutUsModels);
-            recyclerView.setAdapter(aboutUsAdapter);
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
+            aboutClubAdapter = new AboutClubAdapter(context, aboutClubModels);
+            recyclerView.setAdapter(aboutClubAdapter);
 
         }, error -> {
 
@@ -122,6 +113,5 @@ public class AboutUsFragment extends Fragment {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(request);
-
     }
 }

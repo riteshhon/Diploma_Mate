@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".account.AboutUsFragment">
+    tools:context=".account.AboutClubFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -22,12 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="About Us"
+            android:text="About Club"
             android:textAlignment="textStart"
             android:textColor="#EAEAEA"
             android:textSize="18sp" />
 
     </androidx.appcompat.widget.Toolbar>
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_below="@id/toolbar"
@@ -54,7 +55,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="Development Team"
+                android:text="DSC Club Members"
                 android:textColor="@color/secondary_color"
                 android:textSize="14sp"
                 android:textStyle="bold" />
