@@ -180,6 +180,7 @@
                     android:weightSum="2">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvNotes"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:outlineSpotShadowColor="#CDCDCD"

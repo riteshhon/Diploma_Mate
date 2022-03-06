@@ -21,6 +21,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.account.FragmentActivity;
 import com.sanjivani.diplomamate.fragments.ManualsFragment;
+import com.sanjivani.diplomamate.fragments.NotesFragment;
 import com.sanjivani.diplomamate.fragments.SyllabusFragment;
 import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.model.SubjectsModel;
@@ -64,6 +65,9 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
             } else if (typeOfResources.equals("Manual")){
                 FragmentActivity.fragment = "Manual";
                 ManualsFragment.subjectName = list.get(position).getSubjectName().toString();
+            } else if (typeOfResources.equals("Notes")){
+                FragmentActivity.fragment = "Notes";
+                NotesFragment.subjectName = list.get(position).getSubjectName().toString();
             }
 
             context.startActivity(new Intent(context, FragmentActivity.class));

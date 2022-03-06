@@ -17,10 +17,10 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:outlineSpotShadowColor="@color/primary_color"
             app:cardCornerRadius="10dp"
-            app:cardElevation="8dp">
+            app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

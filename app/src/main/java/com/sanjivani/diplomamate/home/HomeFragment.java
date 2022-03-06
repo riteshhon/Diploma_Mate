@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
     Runnable homeSliderRunnable;
     ViewPager2 viewPagerHomeSlider;
 
-    MaterialCardView cvSyllabus, cvManual;
+    MaterialCardView cvSyllabus, cvManual, cvNotes;
 
     TextView line1;
 
@@ -74,6 +74,7 @@ public class HomeFragment extends Fragment {
         viewPagerHomeSlider = view.findViewById(R.id.viewPagerHomeSlider);
         cvSyllabus = view.findViewById(R.id.cvSyllabus);
         cvManual = view.findViewById(R.id.cvManual);
+        cvNotes = view.findViewById(R.id.cvNotes);
         line1 = view.findViewById(R.id.line1);
 
         HomeOnClick();
@@ -181,6 +182,11 @@ public class HomeFragment extends Fragment {
         cvManual.setOnClickListener(view -> {
             FragmentActivity.fragment = "Subject";
             typeOfResources = "Manual";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+        cvNotes.setOnClickListener(view -> {
+            FragmentActivity.fragment = "Subject";
+            typeOfResources = "Notes";
             startActivity(new Intent(context, FragmentActivity.class));
         });
 

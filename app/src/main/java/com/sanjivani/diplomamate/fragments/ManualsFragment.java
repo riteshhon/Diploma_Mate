@@ -92,7 +92,7 @@ public class ManualsFragment extends Fragment {
                 progressDialog.dismiss();
             }
         };
-        handler.postDelayed(runnable, 4000);
+        handler.postDelayed(runnable, 5000);
 
         return view;
     }
@@ -100,7 +100,6 @@ public class ManualsFragment extends Fragment {
     private void callLink() {
         StringRequest request = new StringRequest(Request.Method.POST, API+"manuals.php", response -> {
             try {
-                Toast.makeText(getContext(), ""+response, Toast.LENGTH_SHORT).show();
                 JSONArray jsonArray = new JSONArray(response);
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                 pdfLink = jsonObject.getString("manualUrl");

@@ -14,10 +14,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,11 +27,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnErrorListener;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.sanjivani.diplomamate.R;
-import com.sanjivani.diplomamate.adapter.SubjectsAdapter;
-import com.sanjivani.diplomamate.model.SubjectsModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,8 +42,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-
-public class SyllabusFragment extends Fragment {
+public class NotesFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +61,7 @@ public class SyllabusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_syllabus, container, false);
+        View view = inflater.inflate(R.layout.fragment_notes, container, false);
 
         pdfView = view.findViewById(R.id.pdfView);
         cvProgressBar = view.findViewById(R.id.cvProgressBar);
@@ -104,14 +98,14 @@ public class SyllabusFragment extends Fragment {
     }
 
     private void callLink() {
-        StringRequest request = new StringRequest(Request.Method.POST, API+"syllabus.php", response -> {
+        StringRequest request = new StringRequest(Request.Method.POST, API+"notes.php", response -> {
             try {
 
                 JSONArray jsonArray = new JSONArray(response);
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
-                pdfLink = jsonObject.getString("syllabusLink");
+                pdfLink = jsonObject.getString("notesUrl");
 
-                new RetrievePdfStream().execute(pdfLink);
+                new NotesFragment.RetrievePdfStream().execute(pdfLink);
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -125,7 +119,7 @@ public class SyllabusFragment extends Fragment {
             protected Map<String, String> getParams() {
                 HashMap<String, String> map = new HashMap<>();
                 map.put("key", KEY);
-                map.put("syllabusSubject", subjectName);
+                map.put("notesSubject", subjectName);
                 return map;
             }
         };
@@ -153,22 +147,22 @@ public class SyllabusFragment extends Fragment {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-           try {
-               pdfView.fromStream(inputStream).onLoad(new OnLoadCompleteListener() {
-                   @Override
-                   public void loadComplete(int nbPages) {
-                       final Handler handler = new Handler();
-                       handler.postDelayed(new Runnable() {
-                           @Override
-                           public void run() {
-                               progressDialog.dismiss();
-                           }
-                       }, 500);
-                   }
-               }).load();
-           } catch (Exception e){
+            try {
+                pdfView.fromStream(inputStream).onLoad(new OnLoadCompleteListener() {
+                    @Override
+                    public void loadComplete(int nbPages) {
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                progressDialog.dismiss();
+                            }
+                        }, 500);
+                    }
+                }).load();
+            } catch (Exception e){
 
-           }
+            }
         }
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.fragments.ManualsFragment;
+import com.sanjivani.diplomamate.fragments.NotesFragment;
 import com.sanjivani.diplomamate.fragments.SubjectsFragment;
 import com.sanjivani.diplomamate.fragments.SyllabusFragment;
 
@@ -29,6 +30,8 @@ public class FragmentActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new SyllabusFragment()).commit();
         } else if (fragment.equals("Manual")) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new ManualsFragment()).commit();
+        } else if (fragment.equals("Notes")) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new NotesFragment()).commit();
         }
 
 
