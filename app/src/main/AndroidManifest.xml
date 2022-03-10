@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiplomaMate">
         <activity
+            android:name=".VideoLectureActivity"
+            android:exported="false" />
+        <activity
             android:name=".account.FragmentActivity"
             android:exported="false" />
         <activity

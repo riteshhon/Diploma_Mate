@@ -12,22 +12,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.account.FragmentActivity;
+import com.sanjivani.diplomamate.fragments.AnswerPaperFragment;
 import com.sanjivani.diplomamate.fragments.ManualsFragment;
 import com.sanjivani.diplomamate.fragments.NotesFragment;
+import com.sanjivani.diplomamate.fragments.QuestionPaperFragment;
 import com.sanjivani.diplomamate.fragments.SyllabusFragment;
-import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.model.SubjectsModel;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -61,13 +55,18 @@ public class SubjectsAdapter extends RecyclerView.Adapter<SubjectsAdapter.ViewHo
             if (typeOfResources.equals("Syllabus")){
                 FragmentActivity.fragment = "Syllabus";
                 SyllabusFragment.subjectName = list.get(position).getSubjectName().toString();
-
             } else if (typeOfResources.equals("Manual")){
                 FragmentActivity.fragment = "Manual";
                 ManualsFragment.subjectName = list.get(position).getSubjectName().toString();
             } else if (typeOfResources.equals("Notes")){
                 FragmentActivity.fragment = "Notes";
                 NotesFragment.subjectName = list.get(position).getSubjectName().toString();
+            } else if (typeOfResources.equals("QuestionPaper")){
+                FragmentActivity.fragment = "QuestionPaper";
+                QuestionPaperFragment.subjectName = list.get(position).getSubjectName().toString();
+            } else if (typeOfResources.equals("AnswerPaper")){
+                FragmentActivity.fragment = "AnswerPaper";
+                AnswerPaperFragment.subjectName = list.get(position).getSubjectName().toString();
             }
 
             context.startActivity(new Intent(context, FragmentActivity.class));

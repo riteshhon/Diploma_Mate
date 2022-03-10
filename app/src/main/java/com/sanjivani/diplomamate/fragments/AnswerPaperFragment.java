@@ -43,27 +43,27 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NotesFragment extends Fragment {
+public class AnswerPaperFragment extends Fragment {
+
+    PDFView pdfView;
+    CardView cvProgressBar;
+    LinearLayout llDownloadPDF;
+    ProgressDialog progressDialog;
+
+    public static String subjectName;
+    public static String pdfLink = "";
+    TextView tvEmpty;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-    PDFView pdfView;
-    CardView cvProgressBar;
-    LinearLayout llDownloadPDF;
-    ProgressDialog progressDialog;
-    TextView tvEmpty;
-
-    public static String subjectName;
-    public static String pdfLink = "";
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notes, container, false);
+        View view = inflater.inflate(R.layout.fragment_answer_paper, container, false);
 
         pdfView = view.findViewById(R.id.pdfView);
         cvProgressBar = view.findViewById(R.id.cvProgressBar);
@@ -101,9 +101,8 @@ public class NotesFragment extends Fragment {
     }
 
     private void callLink() {
-        StringRequest request = new StringRequest(Request.Method.POST, API+"notes.php", response -> {
+        StringRequest request = new StringRequest(Request.Method.POST, API+"answerPaper.php", response -> {
             try {
-
                 JSONArray jsonArray = new JSONArray(response);
                 if (jsonArray.length() == 0){
                     tvEmpty.setVisibility(View.VISIBLE);
@@ -112,14 +111,12 @@ public class NotesFragment extends Fragment {
                     tvEmpty.setVisibility(View.GONE);
                 }
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
-                pdfLink = jsonObject.getString("notesUrl");
-
-                new NotesFragment.RetrievePdfStream().execute(pdfLink);
+                pdfLink = jsonObject.getString("answerPaperUrl");
+                new AnswerPaperFragment.RetrievePdfStream().execute(pdfLink);
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }, error -> {
 
         }) {
@@ -128,7 +125,7 @@ public class NotesFragment extends Fragment {
             protected Map<String, String> getParams() {
                 HashMap<String, String> map = new HashMap<>();
                 map.put("key", KEY);
-                map.put("notesSubject", subjectName);
+                map.put("answerPaperSubject", subjectName);
                 return map;
             }
         };

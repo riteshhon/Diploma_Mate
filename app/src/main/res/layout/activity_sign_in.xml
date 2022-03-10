@@ -38,18 +38,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="38dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/sanjivani_logo" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="160dp"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/logo" />
 
@@ -85,9 +92,9 @@
                     android:id="@+id/LL_ProgressBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_marginTop="50dp"
                     android:visibility="gone"
-                    android:layout_marginTop="60dp"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
@@ -127,7 +134,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:background="?attr/selectableItemBackground"
-            android:backgroundTint="#4257CC"
+            android:backgroundTint="#FAAE3E"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="80dp">

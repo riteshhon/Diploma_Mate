@@ -27,6 +27,25 @@
             android:textColor="#EAEAEA"
             android:textSize="16sp" />
 
+        <LinearLayout
+            android:id="@+id/llShare"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_share" />
+
+        </LinearLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.core.widget.NestedScrollView
@@ -311,7 +330,7 @@
                 android:weightSum="2">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cvReportBug"
+                    android:id="@+id/cvGiveUsFeedback"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -327,7 +346,6 @@
                     app:cardElevation="8dp">
 
                     <LinearLayout
-                        android:id="@+id/ll_ReportBug"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"

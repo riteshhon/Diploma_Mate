@@ -18,7 +18,9 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,6 +28,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.card.MaterialCardView;
+import com.sanjivani.diplomamate.VideoLectureActivity;
 import com.sanjivani.diplomamate.account.FragmentActivity;
 import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.R;
@@ -54,8 +57,9 @@ public class HomeFragment extends Fragment {
     Handler homeSliderHandler = new Handler();
     Runnable homeSliderRunnable;
     ViewPager2 viewPagerHomeSlider;
+    LinearLayout llShare;
 
-    MaterialCardView cvSyllabus, cvManual, cvNotes;
+    MaterialCardView cvSyllabus, cvManual, cvNotes, cvVideoLectures, cvQuestionPaper, cvAnswerPaper;
 
     TextView line1;
 
@@ -75,7 +79,11 @@ public class HomeFragment extends Fragment {
         cvSyllabus = view.findViewById(R.id.cvSyllabus);
         cvManual = view.findViewById(R.id.cvManual);
         cvNotes = view.findViewById(R.id.cvNotes);
+        cvVideoLectures = view.findViewById(R.id.cvVideoLectures);
+        cvQuestionPaper = view.findViewById(R.id.cvQuestionPaper);
+        cvAnswerPaper = view.findViewById(R.id.cvAnswerPaper);
         line1 = view.findViewById(R.id.line1);
+        llShare = view.findViewById(R.id.llShare);
 
         HomeOnClick();
 
@@ -185,9 +193,35 @@ public class HomeFragment extends Fragment {
             startActivity(new Intent(context, FragmentActivity.class));
         });
         cvNotes.setOnClickListener(view -> {
-            FragmentActivity.fragment = "Subject";
-            typeOfResources = "Notes";
+//            FragmentActivity.fragment = "Subject";
+//            typeOfResources = "Notes";
+//            startActivity(new Intent(context, FragmentActivity.class));
+            FragmentActivity.fragment = "Unavailable";
             startActivity(new Intent(context, FragmentActivity.class));
+        });
+        cvQuestionPaper.setOnClickListener(view -> {
+            FragmentActivity.fragment = "Subject";
+            typeOfResources = "QuestionPaper";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+        cvAnswerPaper.setOnClickListener(view -> {
+            FragmentActivity.fragment = "Subject";
+            typeOfResources = "AnswerPaper";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+        cvVideoLectures.setOnClickListener(view -> {
+//            startActivity(new Intent(context, VideoLectureActivity.class));
+            FragmentActivity.fragment = "Unavailable";
+            startActivity(new Intent(context, FragmentActivity.class));
+        });
+
+        llShare.setOnClickListener(view -> {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT,
+                    "Hey,\nDownload this Diploma Mate app for Syllabus, Manuals, Notes, Video Lectures, Question Papers and Answer Paper. To download the app below is the link\nhttps://play.google.com/store/apps/details?id=" + getContext().getPackageName());
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
         });
 
     }

@@ -85,12 +85,12 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         tv_privacyPolicy.setOnClickListener(view -> {
-            String uriString = "https://google.com";
+            String uriString = "https://androidseller.in/diploma_mate/privacy-policy";
 
             openCustomTab(this, customIntent.build(), Uri.parse(uriString));
         });
         tv_termsOfUse.setOnClickListener(view -> {
-            String uriString = "https://google.com";
+            String uriString = "https://androidseller.in/diploma_mate/terms-and-condition";
 
             openCustomTab(this, customIntent.build(), Uri.parse(uriString));
         });

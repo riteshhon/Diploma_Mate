@@ -27,6 +27,25 @@
             android:textColor="#EAEAEA"
             android:textSize="16sp" />
 
+        <LinearLayout
+            android:id="@+id/llShare"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_share" />
+
+        </LinearLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -232,6 +251,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvVideoLectures"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:layout_marginTop="10dp"
@@ -291,6 +311,7 @@
                     android:weightSum="2">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvQuestionPaper"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:outlineSpotShadowColor="#CDCDCD"
@@ -342,6 +363,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvAnswerPaper"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
                         android:layout_marginTop="10dp"

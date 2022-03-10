@@ -43,12 +43,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class NotesFragment extends Fragment {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+public class QuestionPaperFragment extends Fragment {
 
     PDFView pdfView;
     CardView cvProgressBar;
@@ -60,10 +55,15 @@ public class NotesFragment extends Fragment {
     public static String pdfLink = "";
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_notes, container, false);
+        View view = inflater.inflate(R.layout.fragment_question_paper, container, false);
 
         pdfView = view.findViewById(R.id.pdfView);
         cvProgressBar = view.findViewById(R.id.cvProgressBar);
@@ -101,10 +101,10 @@ public class NotesFragment extends Fragment {
     }
 
     private void callLink() {
-        StringRequest request = new StringRequest(Request.Method.POST, API+"notes.php", response -> {
+        StringRequest request = new StringRequest(Request.Method.POST, API+"questionPaper.php", response -> {
             try {
-
                 JSONArray jsonArray = new JSONArray(response);
+
                 if (jsonArray.length() == 0){
                     tvEmpty.setVisibility(View.VISIBLE);
                     progressDialog.dismiss();
@@ -112,14 +112,13 @@ public class NotesFragment extends Fragment {
                     tvEmpty.setVisibility(View.GONE);
                 }
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
-                pdfLink = jsonObject.getString("notesUrl");
+                pdfLink = jsonObject.getString("questionPaperUrl");
 
-                new NotesFragment.RetrievePdfStream().execute(pdfLink);
+                new QuestionPaperFragment.RetrievePdfStream().execute(pdfLink);
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }, error -> {
 
         }) {
@@ -128,7 +127,7 @@ public class NotesFragment extends Fragment {
             protected Map<String, String> getParams() {
                 HashMap<String, String> map = new HashMap<>();
                 map.put("key", KEY);
-                map.put("notesSubject", subjectName);
+                map.put("questionPaperSubject", subjectName);
                 return map;
             }
         };

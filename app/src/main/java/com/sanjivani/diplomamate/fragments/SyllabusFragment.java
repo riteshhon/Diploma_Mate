@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -59,6 +60,7 @@ public class SyllabusFragment extends Fragment {
     CardView cvProgressBar;
     LinearLayout llDownloadPDF;
     ProgressDialog progressDialog;
+    TextView tvEmpty;
 
     public static String subjectName;
     public static String pdfLink = "";
@@ -72,6 +74,7 @@ public class SyllabusFragment extends Fragment {
         pdfView = view.findViewById(R.id.pdfView);
         cvProgressBar = view.findViewById(R.id.cvProgressBar);
         llDownloadPDF = view.findViewById(R.id.llDownloadPDF);
+        tvEmpty = view.findViewById(R.id.tvEmpty);
 
         progressDialog = new ProgressDialog(getContext());
         progressDialog.show();
@@ -89,14 +92,14 @@ public class SyllabusFragment extends Fragment {
             llDownloadPDF.setVisibility(View.GONE);
         }
 
-        Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                progressDialog.dismiss();
-            }
-        };
-        handler.postDelayed(runnable, 5000);
+//        Handler handler = new Handler();
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                progressDialog.dismiss();
+//            }
+//        };
+//        handler.postDelayed(runnable, 5000);
 
         callLink();
 
@@ -108,6 +111,14 @@ public class SyllabusFragment extends Fragment {
             try {
 
                 JSONArray jsonArray = new JSONArray(response);
+
+                if (jsonArray.length() == 0){
+                    tvEmpty.setVisibility(View.VISIBLE);
+                    progressDialog.dismiss();
+                } else {
+                    tvEmpty.setVisibility(View.GONE);
+                }
+
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                 pdfLink = jsonObject.getString("syllabusLink");
 
