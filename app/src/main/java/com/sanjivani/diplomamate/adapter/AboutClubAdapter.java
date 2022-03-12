@@ -49,6 +49,12 @@ public class AboutClubAdapter extends RecyclerView.Adapter<AboutClubAdapter.View
         holder.imgLinkedIn.setOnClickListener(view -> {
             context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(list.get(position).getLinkedInUrl())));
         });
+        holder.imgTwitter.setOnClickListener(view -> {
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(list.get(position).getTwitterUrl())));
+        });
+        holder.imgGithub.setOnClickListener(view -> {
+            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(list.get(position).getGithubUrl())));
+        });
 
         if (!list.get(position).getLinkedInUrl().equals("")){
             holder.imgLinkedIn.setVisibility(View.VISIBLE);

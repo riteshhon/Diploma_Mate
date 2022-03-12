@@ -57,7 +57,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:text="Diploma Computer Technology - TY"
-                            android:textColor="#2D5677"
+                            android:textColor="@color/secondary_color"
                             android:textSize="10sp" />
 
                         <com.google.android.material.card.MaterialCardView
