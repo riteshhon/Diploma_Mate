@@ -31,7 +31,6 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.sanjivani.diplomamate.BuildConfig;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.SignInActivity;
 import com.sanjivani.diplomamate.account.FragmentActivity;
@@ -159,22 +158,18 @@ public class MeFragment extends Fragment {
             progressDialog.setCanceledOnTouchOutside(false);
 
             Handler handler = new Handler();
-            Runnable runnable = new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismiss();
-                    mAuth.signOut();
-                    SharedPreferences sh = getContext().getSharedPreferences("BasicDetails", MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sh.edit();
-                    editor.clear();
-                    editor.apply();
-                    startActivity(new Intent(getContext(), SignInActivity.class));
-                    getActivity().finish();
-                    getActivity().finishAffinity();
-                }
+            Runnable runnable = () -> {
+                progressDialog.dismiss();
+                mAuth.signOut();
+                SharedPreferences sh = getContext().getSharedPreferences("BasicDetails", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sh.edit();
+                editor.clear();
+                editor.apply();
+                startActivity(new Intent(getContext(), SignInActivity.class));
+                getActivity().finish();
+                getActivity().finishAffinity();
             };
             handler.postDelayed(runnable, 2000);
-
 
         });
     }
