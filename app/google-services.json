@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "520099218502",
+    "project_id": "diploma-mate-336c8",
+    "storage_bucket": "diploma-mate-336c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520099218502:android:e9a50b197cb20ecc383647",
+        "android_client_info": {
+          "package_name": "com.sanjivanidsc.diplomamate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520099218502-rudhen2qf7edrp5tfqcknh91rbdul8ch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sanjivanidsc.diplomamate",
+            "certificate_hash": "2b97a4d3f74da50814565576918336a592470dc2"
+          }
+        },
+        {
+          "client_id": "520099218502-8s3hq6fpe31lrqt87qdqf7vkohq26tch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1Xy8cf7gSNwTVMFsTC0rF8RlTMja3BS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520099218502-8s3hq6fpe31lrqt87qdqf7vkohq26tch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
