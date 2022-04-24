@@ -41,8 +41,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="320dp"
-                android:layout_height="80dp"
+                android:layout_width="380dp"
+                android:layout_height="95dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/img_developerstudentclub" />
 
@@ -55,7 +55,7 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:text="Development Team"
-                android:textColor="@color/secondary_color"
+                android:textColor="@color/purple_200"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
     private long mBackPressed;
-    public static String log, department, year, semester;
+    public static String department, year, semester;
 
     ActivityHomeBinding binding;
     HomeViewPagerAdapter homeViewPagerAdapter;

@@ -57,24 +57,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPagerHomeSlider"
+            <LinearLayout
+                android:id="@+id/ll01"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/secondary_color"
-                android:layout_below="@id/viewPagerHomeSlider"/>
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPagerHomeSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp" />
+
+                <TextView
+                    android:id="@+id/line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/secondary_color"
+                    android:layout_below="@id/viewPagerHomeSlider"/>
+
+            </LinearLayout>
 
             <LinearLayout
-                android:layout_below="@+id/line1"
+                android:layout_below="@+id/ll01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -199,118 +207,6 @@
                     android:weightSum="2">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cvNotes"
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:outlineSpotShadowColor="#CDCDCD"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="15dp"
-                        app:cardElevation="10dp"
-                        android:backgroundTint="@color/bg_home_color"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center"
-                                app:cardCornerRadius="180dp"
-                                app:cardElevation="5dp"
-                                android:backgroundTint="@color/primary_color">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/ic_notes"
-                                    android:layout_margin="10dp"/>
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="15dp"
-                                android:text="Notes"
-                                android:textStyle="bold"
-                                android:textColor="@color/secondary_color"/>
-
-                        </LinearLayout>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cvVideoLectures"
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="15dp"
-                        android:outlineSpotShadowColor="#CDCDCD"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:layout_marginStart="10dp"
-                        app:cardElevation="10dp"
-                        android:backgroundTint="@color/bg_home_color"
-                        app:cardCornerRadius="10dp"
-                        android:layout_weight="1">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center"
-                                app:cardCornerRadius="180dp"
-                                app:cardElevation="5dp"
-                                android:backgroundTint="@color/primary_color">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/ic_video_lecture"
-                                    android:layout_margin="10dp"/>
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginTop="15dp"
-                                android:text="Video Lectures"
-                                android:textStyle="bold"
-                                android:textColor="@color/secondary_color"/>
-
-                        </LinearLayout>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:weightSum="2">
-
-                    <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cvQuestionPaper"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
@@ -407,6 +303,118 @@
                                 android:layout_gravity="center"
                                 android:layout_marginTop="15dp"
                                 android:text="Answer Paper"
+                                android:textStyle="bold"
+                                android:textColor="@color/secondary_color"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:weightSum="2">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:outlineSpotShadowColor="#CDCDCD"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="15dp"
+                        app:cardElevation="10dp"
+                        android:backgroundTint="@color/bg_home_color"
+                        app:cardCornerRadius="10dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="180dp"
+                                app:cardElevation="5dp"
+                                android:backgroundTint="@color/primary_color">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/ic_notes"
+                                    android:layout_margin="10dp"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="15dp"
+                                android:text="Notes"
+                                android:textStyle="bold"
+                                android:textColor="@color/secondary_color"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvVideoLectures"
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:outlineSpotShadowColor="#CDCDCD"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginStart="10dp"
+                        app:cardElevation="10dp"
+                        android:backgroundTint="@color/bg_home_color"
+                        app:cardCornerRadius="10dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                app:cardCornerRadius="180dp"
+                                app:cardElevation="5dp"
+                                android:backgroundTint="@color/primary_color">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/ic_video_lecture"
+                                    android:layout_margin="10dp"/>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="15dp"
+                                android:text="Video Lectures"
                                 android:textStyle="bold"
                                 android:textColor="@color/secondary_color"/>
 

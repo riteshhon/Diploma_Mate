@@ -2,8 +2,10 @@ package com.sanjivani.diplomamate.home;
 
 import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,6 +32,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.card.MaterialCardView;
 import com.sanjivani.diplomamate.VideoLectureActivity;
 import com.sanjivani.diplomamate.account.FragmentActivity;
+import com.sanjivani.diplomamate.fragments.UnavailableFragment;
 import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.adapter.HomeSliderAdapter;
@@ -50,18 +53,19 @@ public class HomeFragment extends Fragment {
     public static String typeOfResources = "";
 
     Context context;
-
     //    Home Slider
     HomeSliderAdapter homeSliderAdapter;
     List<HomeSliderModel> homeSliderModels = new ArrayList();
     Handler homeSliderHandler = new Handler();
     Runnable homeSliderRunnable;
     ViewPager2 viewPagerHomeSlider;
-    LinearLayout llShare;
+    LinearLayout llShare, ll01;
 
     MaterialCardView cvSyllabus, cvManual, cvNotes, cvVideoLectures, cvQuestionPaper, cvAnswerPaper;
 
     TextView line1;
+
+    public static boolean homeSlider = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,11 +88,13 @@ public class HomeFragment extends Fragment {
         cvAnswerPaper = view.findViewById(R.id.cvAnswerPaper);
         line1 = view.findViewById(R.id.line1);
         llShare = view.findViewById(R.id.llShare);
+        ll01 = view.findViewById(R.id.ll01);
+
+        ll01.setVisibility(View.GONE);
 
         HomeOnClick();
 
         HomeSlider();
-
         return view;
     }
 
@@ -103,9 +109,11 @@ public class HomeFragment extends Fragment {
                         if (jsonArray1.length() != 0){
                             viewPagerHomeSlider.setVisibility(View.VISIBLE);
                             line1.setVisibility(View.VISIBLE);
+                            ll01.setVisibility(View.VISIBLE);
                         } else {
                             viewPagerHomeSlider.setVisibility(View.GONE);
                             line1.setVisibility(View.GONE);
+                            ll01.setVisibility(View.GONE);
                         }
 
                     } catch (JSONException e) {
@@ -197,6 +205,7 @@ public class HomeFragment extends Fragment {
 //            typeOfResources = "Notes";
 //            startActivity(new Intent(context, FragmentActivity.class));
             FragmentActivity.fragment = "Unavailable";
+            UnavailableFragment.toolbarTitle = "Notes";
             startActivity(new Intent(context, FragmentActivity.class));
         });
         cvQuestionPaper.setOnClickListener(view -> {
@@ -212,6 +221,7 @@ public class HomeFragment extends Fragment {
         cvVideoLectures.setOnClickListener(view -> {
 //            startActivity(new Intent(context, VideoLectureActivity.class));
             FragmentActivity.fragment = "Unavailable";
+            UnavailableFragment.toolbarTitle = "Video Lectures";
             startActivity(new Intent(context, FragmentActivity.class));
         });
 

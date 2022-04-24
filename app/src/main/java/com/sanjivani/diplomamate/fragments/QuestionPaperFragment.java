@@ -107,9 +107,11 @@ public class QuestionPaperFragment extends Fragment {
 
                 if (jsonArray.length() == 0){
                     tvEmpty.setVisibility(View.VISIBLE);
+                    llDownloadPDF.setVisibility(View.GONE);
                     progressDialog.dismiss();
                 } else {
                     tvEmpty.setVisibility(View.GONE);
+                    llDownloadPDF.setVisibility(View.VISIBLE);
                 }
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                 pdfLink = jsonObject.getString("questionPaperUrl");

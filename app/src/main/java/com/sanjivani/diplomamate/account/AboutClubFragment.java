@@ -4,6 +4,8 @@ import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.KEY;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,15 +18,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.adapter.AboutClubAdapter;
 import com.sanjivani.diplomamate.adapter.AboutUsAdapter;
+import com.sanjivani.diplomamate.helper.KeyAdapter;
 import com.sanjivani.diplomamate.model.AboutClubModel;
 import com.sanjivani.diplomamate.model.AboutUsModel;
 
@@ -37,6 +43,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class AboutClubFragment extends Fragment {
 
     @Override
@@ -47,6 +55,10 @@ public class AboutClubFragment extends Fragment {
     FirebaseAuth mAuth;
     Context context;
     CardView cvProgressBar;
+
+    CircleImageView ivHodSir, ivInchargeSir;
+    MaterialCardView cvHODLinkedIn, cvInchargeSirLinkedIn;
+    String hodSirPic, hodSirLinkedIn, inchargePic, inchargeLinkedIn;
 
     //    AboutUs
     AboutClubAdapter aboutClubAdapter;
@@ -63,6 +75,12 @@ public class AboutClubFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.recyclerView);
         cvProgressBar = view.findViewById(R.id.cvProgressBar);
+        ivHodSir = view.findViewById(R.id.ivHodSir);
+        ivInchargeSir = view.findViewById(R.id.ivInchargeSir);
+        cvHODLinkedIn = view.findViewById(R.id.cvHODLinkedIn);
+        cvInchargeSirLinkedIn = view.findViewById(R.id.cvInchargeSirLinkedIn);
+
+        callSupport();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -70,6 +88,35 @@ public class AboutClubFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void callSupport() {
+        StringRequest request = new StringRequest(Request.Method.GET, KeyAdapter.API + "support.json", response -> {
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                hodSirPic = jsonObject.getString("hodSirPic");
+                hodSirLinkedIn = jsonObject.getString("hodSirLinkedIn");
+                inchargePic = jsonObject.getString("inchargePic");
+                inchargeLinkedIn = jsonObject.getString("inchargeLinkedIn");
+
+                Glide.with(context).load(hodSirPic).into(ivHodSir);
+                Glide.with(context).load(inchargePic).into(ivInchargeSir);
+
+                cvHODLinkedIn.setOnClickListener(view1 -> {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(hodSirLinkedIn)));
+                });
+                cvInchargeSirLinkedIn.setOnClickListener(view1 -> {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(inchargeLinkedIn)));
+                });
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }, error -> {
+
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(request);
     }
 
     private void callClubMembers() {

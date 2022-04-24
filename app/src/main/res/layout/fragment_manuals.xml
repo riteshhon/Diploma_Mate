@@ -32,13 +32,13 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_gravity="end"
-            android:layout_marginEnd="5dp"
             android:layout_marginTop="5dp"
-            android:orientation="vertical"
+            android:layout_marginEnd="5dp"
             android:background="?attr/selectableItemBackground"
-            android:gravity="center_horizontal"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="25dp"
@@ -51,8 +51,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="Download PDF"
-                android:textSize="6sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="6sp" />
 
         </LinearLayout>
 

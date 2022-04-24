@@ -42,8 +42,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="320dp"
-                android:layout_height="80dp"
+                android:layout_width="380dp"
+                android:layout_height="95dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/img_developerstudentclub" />
 
@@ -56,35 +56,306 @@
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:text="DSC Club Members"
-                android:textColor="@color/secondary_color"
+                android:textColor="@color/purple_500"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:outlineSpotShadowColor="#CDCDCD"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="45dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Mr. Ganesh N. Jorvekar"
+                                            android:textColor="@color/primary_color"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="3dp"
+                                            android:text="HOD of Computer Department"
+                                            android:textColor="@color/secondary_color"
+                                            android:textSize="7sp" />
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="15dp"
+                                            android:gravity="center"
+                                            android:orientation="horizontal">
+
+                                            <com.google.android.material.card.MaterialCardView
+                                                android:id="@+id/cvHODLinkedIn"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="22dp"
+                                                android:backgroundTint="#0077B5"
+                                                android:outlineSpotShadowColor="#CDCDCD"
+                                                app:cardCornerRadius="5dp">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal">
+
+                                                    <ImageView
+                                                        android:layout_width="10dp"
+                                                        android:layout_height="10dp"
+                                                        android:layout_gravity="center_vertical"
+                                                        android:layout_marginStart="10dp"
+                                                        android:background="@drawable/ic_linkedin_" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="center"
+                                                        android:layout_marginStart="10dp"
+                                                        android:layout_marginEnd="10dp"
+                                                        android:gravity="center"
+                                                        android:text="LinkedIn"
+                                                        android:textColor="@color/white"
+                                                        android:textSize="10sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                            </com.google.android.material.card.MaterialCardView>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivHodSir"
+                            android:layout_width="90dp"
+                            app:civ_border_color="@color/primary_color"
+                            app:civ_border_width="1dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="5dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="50dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:outlineSpotShadowColor="#CDCDCD"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="12dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_2">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="45dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="15dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Mr. Yogesh A. Pawar"
+                                            android:textColor="@color/primary_color"
+                                            android:textSize="12sp"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="3dp"
+                                            android:text="DSC Club Incharge"
+                                            android:textColor="@color/secondary_color"
+                                            android:textSize="7sp" />
+
+                                        <LinearLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="15dp"
+                                            android:gravity="center"
+                                            android:orientation="horizontal">
+
+                                            <com.google.android.material.card.MaterialCardView
+                                                android:id="@+id/cvInchargeSirLinkedIn"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="22dp"
+                                                android:backgroundTint="#0077B5"
+                                                android:outlineSpotShadowColor="#CDCDCD"
+                                                app:cardCornerRadius="5dp">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal">
+
+                                                    <ImageView
+                                                        android:layout_width="10dp"
+                                                        android:layout_height="10dp"
+                                                        android:layout_gravity="center_vertical"
+                                                        android:layout_marginStart="10dp"
+                                                        android:background="@drawable/ic_linkedin_" />
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_gravity="center"
+                                                        android:layout_marginStart="10dp"
+                                                        android:layout_marginEnd="10dp"
+                                                        android:gravity="center"
+                                                        android:text="LinkedIn"
+                                                        android:textColor="@color/white"
+                                                        android:textSize="10sp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                            </com.google.android.material.card.MaterialCardView>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivInchargeSir"
+                            android:layout_width="90dp"
+                            app:civ_border_color="@color/primary_color"
+                            app:civ_border_width="1dp"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="5dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvProgressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="180dp">
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:indeterminateTint="@color/secondary_color" />
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvProgressBar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:visibility="gone"
-        android:layout_margin="10dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        app:cardCornerRadius="180dp">
-
-        <ProgressBar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:indeterminateTint="@color/secondary_color" />
-
-    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

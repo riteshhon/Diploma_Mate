@@ -24,6 +24,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +35,10 @@ import com.sanjivani.diplomamate.BuildConfig;
 import com.sanjivani.diplomamate.R;
 import com.sanjivani.diplomamate.SignInActivity;
 import com.sanjivani.diplomamate.account.FragmentActivity;
+import com.sanjivani.diplomamate.helper.KeyAdapter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -84,19 +92,21 @@ public class MeFragment extends Fragment {
 
         OnClick();
 
+        callSupport();
+
         return view;
     }
 
     private void OnClick() {
 
         cvPrivacyPolicy.setOnClickListener(view -> {
-            String uriString = "https://androidseller.in/diploma_mate/privacy-policy";
+            String uriString = "https://sanjivanikbpcm.com/diplomamate/privacy-policy.html";
 
             openCustomTab(context, customIntent.build(), Uri.parse(uriString));
         });
 
         cvTermsCondition.setOnClickListener(view -> {
-            String uriString = "https://androidseller.in/diploma_mate/terms-and-condition";
+            String uriString = "https://sanjivanikbpcm.com/diplomamate/terms-and-condition.html";
 
             openCustomTab(context, customIntent.build(), Uri.parse(uriString));
         });
@@ -123,12 +133,6 @@ public class MeFragment extends Fragment {
             } catch (android.content.ActivityNotFoundException ex) {
                 Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
             }
-        });
-
-        cvMoreApp.setOnClickListener(view -> {
-            Uri uri = Uri.parse("https://play.google.com/store/apps/developer?id=Android+Seller"); // missing 'http://' will cause crashed
-            Intent intents = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intents);
         });
 
         cvRateUs.setOnClickListener(view -> {
@@ -174,4 +178,27 @@ public class MeFragment extends Fragment {
 
         });
     }
+
+    private void callSupport() {
+        StringRequest request = new StringRequest(Request.Method.GET, KeyAdapter.API + "support.json", response -> {
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                String developerPageUrl = jsonObject.getString("developerPage");
+
+                cvMoreApp.setOnClickListener(view -> {
+                    Uri uri = Uri.parse(developerPageUrl); // missing 'http://' will cause crashed
+                    Intent intents = new Intent(Intent.ACTION_VIEW, uri);
+                    startActivity(intents);
+                });
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }, error -> {
+
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(request);
+    }
+
 }

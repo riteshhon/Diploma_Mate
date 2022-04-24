@@ -1,10 +1,12 @@
 package com.sanjivani.diplomamate.account;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.API;
 import static com.sanjivani.diplomamate.helper.KeyAdapter.KEY;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
